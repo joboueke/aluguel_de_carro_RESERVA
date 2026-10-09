@@ -18,7 +18,17 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
- * Model Reserva
+ * Model historico_status_reserva
  * 
  */
-export type Reserva = Prisma.ReservaModel
+export type historico_status_reserva = Prisma.historico_status_reservaModel
+/**
+ * Model reserva
+ * This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+ */
+export type reserva = Prisma.reservaModel
+/**
+ * Model usuario
+ * 
+ */
+export type usuario = Prisma.usuarioModel

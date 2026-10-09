@@ -31,8 +31,8 @@ export * from "./enums.js"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Reservas
- * const reservas = await prisma.reserva.findMany()
+ * // Fetch zero or more Historico_status_reservas
+ * const historico_status_reservas = await prisma.historico_status_reserva.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -42,7 +42,17 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
- * Model Reserva
+ * Model historico_status_reserva
  * 
  */
-export type Reserva = Prisma.ReservaModel
+export type historico_status_reserva = Prisma.historico_status_reservaModel
+/**
+ * Model reserva
+ * This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+ */
+export type reserva = Prisma.reservaModel
+/**
+ * Model usuario
+ * 
+ */
+export type usuario = Prisma.usuarioModel

@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Reserva` model and its related types.
+ * This file exports the `reserva` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Reserva
- * 
+ * Model reserva
+ * This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
  */
-export type ReservaModel = runtime.Types.Result.DefaultSelection<Prisma.$ReservaPayload>
+export type reservaModel = runtime.Types.Result.DefaultSelection<Prisma.$reservaPayload>
 
 export type AggregateReserva = {
   _count: ReservaCountAggregateOutputType | null
@@ -27,141 +27,183 @@ export type AggregateReserva = {
 }
 
 export type ReservaAvgAggregateOutputType = {
-  id: number | null
-  clienteId: number | null
-  veiculoId: number | null
-  valorTotal: runtime.Decimal | null
+  reserva_id: number | null
+  usuario_id: number | null
+  reserva_veiculo_id: number | null
+  reserva_quilometragem_retirada: number | null
+  reserva_quilometragem_devolucao: number | null
+  reserva_valor_estimado: runtime.Decimal | null
+  reserva_status: number | null
 }
 
 export type ReservaSumAggregateOutputType = {
-  id: number | null
-  clienteId: number | null
-  veiculoId: number | null
-  valorTotal: runtime.Decimal | null
+  reserva_id: bigint | null
+  usuario_id: bigint | null
+  reserva_veiculo_id: bigint | null
+  reserva_quilometragem_retirada: number | null
+  reserva_quilometragem_devolucao: number | null
+  reserva_valor_estimado: runtime.Decimal | null
+  reserva_status: number | null
 }
 
 export type ReservaMinAggregateOutputType = {
-  id: number | null
-  clienteId: number | null
-  veiculoId: number | null
-  dataInicio: Date | null
-  dataFim: Date | null
-  valorTotal: runtime.Decimal | null
-  status: string | null
-  criadoEm: Date | null
-  atualizadoEm: Date | null
+  reserva_id: bigint | null
+  usuario_id: bigint | null
+  reserva_veiculo_id: bigint | null
+  reserva_retirada_prevista: Date | null
+  reserva_devolucao_prevista: Date | null
+  reserva_retirada_real: Date | null
+  reserva_devolucao_real: Date | null
+  reserva_quilometragem_retirada: number | null
+  reserva_quilometragem_devolucao: number | null
+  reserva_valor_estimado: runtime.Decimal | null
+  reserva_criada: Date | null
+  reserva_atualizada: Date | null
+  reserva_cancelada: Date | null
+  reserva_status: number | null
 }
 
 export type ReservaMaxAggregateOutputType = {
-  id: number | null
-  clienteId: number | null
-  veiculoId: number | null
-  dataInicio: Date | null
-  dataFim: Date | null
-  valorTotal: runtime.Decimal | null
-  status: string | null
-  criadoEm: Date | null
-  atualizadoEm: Date | null
+  reserva_id: bigint | null
+  usuario_id: bigint | null
+  reserva_veiculo_id: bigint | null
+  reserva_retirada_prevista: Date | null
+  reserva_devolucao_prevista: Date | null
+  reserva_retirada_real: Date | null
+  reserva_devolucao_real: Date | null
+  reserva_quilometragem_retirada: number | null
+  reserva_quilometragem_devolucao: number | null
+  reserva_valor_estimado: runtime.Decimal | null
+  reserva_criada: Date | null
+  reserva_atualizada: Date | null
+  reserva_cancelada: Date | null
+  reserva_status: number | null
 }
 
 export type ReservaCountAggregateOutputType = {
-  id: number
-  clienteId: number
-  veiculoId: number
-  dataInicio: number
-  dataFim: number
-  valorTotal: number
-  status: number
-  criadoEm: number
-  atualizadoEm: number
+  reserva_id: number
+  usuario_id: number
+  reserva_veiculo_id: number
+  reserva_retirada_prevista: number
+  reserva_devolucao_prevista: number
+  reserva_retirada_real: number
+  reserva_devolucao_real: number
+  reserva_quilometragem_retirada: number
+  reserva_quilometragem_devolucao: number
+  reserva_valor_estimado: number
+  reserva_criada: number
+  reserva_atualizada: number
+  reserva_cancelada: number
+  reserva_status: number
   _all: number
 }
 
 
 export type ReservaAvgAggregateInputType = {
-  id?: true
-  clienteId?: true
-  veiculoId?: true
-  valorTotal?: true
+  reserva_id?: true
+  usuario_id?: true
+  reserva_veiculo_id?: true
+  reserva_quilometragem_retirada?: true
+  reserva_quilometragem_devolucao?: true
+  reserva_valor_estimado?: true
+  reserva_status?: true
 }
 
 export type ReservaSumAggregateInputType = {
-  id?: true
-  clienteId?: true
-  veiculoId?: true
-  valorTotal?: true
+  reserva_id?: true
+  usuario_id?: true
+  reserva_veiculo_id?: true
+  reserva_quilometragem_retirada?: true
+  reserva_quilometragem_devolucao?: true
+  reserva_valor_estimado?: true
+  reserva_status?: true
 }
 
 export type ReservaMinAggregateInputType = {
-  id?: true
-  clienteId?: true
-  veiculoId?: true
-  dataInicio?: true
-  dataFim?: true
-  valorTotal?: true
-  status?: true
-  criadoEm?: true
-  atualizadoEm?: true
+  reserva_id?: true
+  usuario_id?: true
+  reserva_veiculo_id?: true
+  reserva_retirada_prevista?: true
+  reserva_devolucao_prevista?: true
+  reserva_retirada_real?: true
+  reserva_devolucao_real?: true
+  reserva_quilometragem_retirada?: true
+  reserva_quilometragem_devolucao?: true
+  reserva_valor_estimado?: true
+  reserva_criada?: true
+  reserva_atualizada?: true
+  reserva_cancelada?: true
+  reserva_status?: true
 }
 
 export type ReservaMaxAggregateInputType = {
-  id?: true
-  clienteId?: true
-  veiculoId?: true
-  dataInicio?: true
-  dataFim?: true
-  valorTotal?: true
-  status?: true
-  criadoEm?: true
-  atualizadoEm?: true
+  reserva_id?: true
+  usuario_id?: true
+  reserva_veiculo_id?: true
+  reserva_retirada_prevista?: true
+  reserva_devolucao_prevista?: true
+  reserva_retirada_real?: true
+  reserva_devolucao_real?: true
+  reserva_quilometragem_retirada?: true
+  reserva_quilometragem_devolucao?: true
+  reserva_valor_estimado?: true
+  reserva_criada?: true
+  reserva_atualizada?: true
+  reserva_cancelada?: true
+  reserva_status?: true
 }
 
 export type ReservaCountAggregateInputType = {
-  id?: true
-  clienteId?: true
-  veiculoId?: true
-  dataInicio?: true
-  dataFim?: true
-  valorTotal?: true
-  status?: true
-  criadoEm?: true
-  atualizadoEm?: true
+  reserva_id?: true
+  usuario_id?: true
+  reserva_veiculo_id?: true
+  reserva_retirada_prevista?: true
+  reserva_devolucao_prevista?: true
+  reserva_retirada_real?: true
+  reserva_devolucao_real?: true
+  reserva_quilometragem_retirada?: true
+  reserva_quilometragem_devolucao?: true
+  reserva_valor_estimado?: true
+  reserva_criada?: true
+  reserva_atualizada?: true
+  reserva_cancelada?: true
+  reserva_status?: true
   _all?: true
 }
 
 export type ReservaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Reserva to aggregate.
+   * Filter which reserva to aggregate.
    */
-  where?: Prisma.ReservaWhereInput
+  where?: Prisma.reservaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Reservas to fetch.
+   * Determine the order of reservas to fetch.
    */
-  orderBy?: Prisma.ReservaOrderByWithRelationInput | Prisma.ReservaOrderByWithRelationInput[]
+  orderBy?: Prisma.reservaOrderByWithRelationInput | Prisma.reservaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ReservaWhereUniqueInput
+  cursor?: Prisma.reservaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Reservas from the position of the cursor.
+   * Take `±n` reservas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Reservas.
+   * Skip the first `n` reservas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Reservas
+   * Count returned reservas
   **/
   _count?: true | ReservaCountAggregateInputType
   /**
@@ -201,11 +243,11 @@ export type GetReservaAggregateType<T extends ReservaAggregateArgs> = {
 
 
 
-export type ReservaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ReservaWhereInput
-  orderBy?: Prisma.ReservaOrderByWithAggregationInput | Prisma.ReservaOrderByWithAggregationInput[]
+export type reservaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.reservaWhereInput
+  orderBy?: Prisma.reservaOrderByWithAggregationInput | Prisma.reservaOrderByWithAggregationInput[]
   by: Prisma.ReservaScalarFieldEnum[] | Prisma.ReservaScalarFieldEnum
-  having?: Prisma.ReservaScalarWhereWithAggregatesInput
+  having?: Prisma.reservaScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: ReservaCountAggregateInputType | true
@@ -216,15 +258,20 @@ export type ReservaGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 export type ReservaGroupByOutputType = {
-  id: number
-  clienteId: number
-  veiculoId: number
-  dataInicio: Date
-  dataFim: Date
-  valorTotal: runtime.Decimal | null
-  status: string
-  criadoEm: Date
-  atualizadoEm: Date
+  reserva_id: bigint
+  usuario_id: bigint
+  reserva_veiculo_id: bigint
+  reserva_retirada_prevista: Date
+  reserva_devolucao_prevista: Date
+  reserva_retirada_real: Date | null
+  reserva_devolucao_real: Date | null
+  reserva_quilometragem_retirada: number | null
+  reserva_quilometragem_devolucao: number | null
+  reserva_valor_estimado: runtime.Decimal | null
+  reserva_criada: Date
+  reserva_atualizada: Date
+  reserva_cancelada: Date | null
+  reserva_status: number
   _count: ReservaCountAggregateOutputType | null
   _avg: ReservaAvgAggregateOutputType | null
   _sum: ReservaSumAggregateOutputType | null
@@ -232,7 +279,7 @@ export type ReservaGroupByOutputType = {
   _max: ReservaMaxAggregateOutputType | null
 }
 
-export type GetReservaGroupByPayload<T extends ReservaGroupByArgs> = Prisma.PrismaPromise<
+export type GetReservaGroupByPayload<T extends reservaGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ReservaGroupByOutputType, T['by']> &
       {
@@ -247,224 +294,293 @@ export type GetReservaGroupByPayload<T extends ReservaGroupByArgs> = Prisma.Pris
 
 
 
-export type ReservaWhereInput = {
-  AND?: Prisma.ReservaWhereInput | Prisma.ReservaWhereInput[]
-  OR?: Prisma.ReservaWhereInput[]
-  NOT?: Prisma.ReservaWhereInput | Prisma.ReservaWhereInput[]
-  id?: Prisma.IntFilter<"Reserva"> | number
-  clienteId?: Prisma.IntFilter<"Reserva"> | number
-  veiculoId?: Prisma.IntFilter<"Reserva"> | number
-  dataInicio?: Prisma.DateTimeFilter<"Reserva"> | Date | string
-  dataFim?: Prisma.DateTimeFilter<"Reserva"> | Date | string
-  valorTotal?: Prisma.DecimalNullableFilter<"Reserva"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: Prisma.StringFilter<"Reserva"> | string
-  criadoEm?: Prisma.DateTimeFilter<"Reserva"> | Date | string
-  atualizadoEm?: Prisma.DateTimeFilter<"Reserva"> | Date | string
+export type reservaWhereInput = {
+  AND?: Prisma.reservaWhereInput | Prisma.reservaWhereInput[]
+  OR?: Prisma.reservaWhereInput[]
+  NOT?: Prisma.reservaWhereInput | Prisma.reservaWhereInput[]
+  reserva_id?: Prisma.BigIntFilter<"reserva"> | bigint | number
+  usuario_id?: Prisma.BigIntFilter<"reserva"> | bigint | number
+  reserva_veiculo_id?: Prisma.BigIntFilter<"reserva"> | bigint | number
+  reserva_retirada_prevista?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_devolucao_prevista?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_retirada_real?: Prisma.DateTimeNullableFilter<"reserva"> | Date | string | null
+  reserva_devolucao_real?: Prisma.DateTimeNullableFilter<"reserva"> | Date | string | null
+  reserva_quilometragem_retirada?: Prisma.IntNullableFilter<"reserva"> | number | null
+  reserva_quilometragem_devolucao?: Prisma.IntNullableFilter<"reserva"> | number | null
+  reserva_valor_estimado?: Prisma.DecimalNullableFilter<"reserva"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_atualizada?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_cancelada?: Prisma.DateTimeNullableFilter<"reserva"> | Date | string | null
+  reserva_status?: Prisma.IntFilter<"reserva"> | number
 }
 
-export type ReservaOrderByWithRelationInput = {
-  id?: Prisma.SortOrder
-  clienteId?: Prisma.SortOrder
-  veiculoId?: Prisma.SortOrder
-  dataInicio?: Prisma.SortOrder
-  dataFim?: Prisma.SortOrder
-  valorTotal?: Prisma.SortOrderInput | Prisma.SortOrder
-  status?: Prisma.SortOrder
-  criadoEm?: Prisma.SortOrder
-  atualizadoEm?: Prisma.SortOrder
-  _relevance?: Prisma.ReservaOrderByRelevanceInput
+export type reservaOrderByWithRelationInput = {
+  reserva_id?: Prisma.SortOrder
+  usuario_id?: Prisma.SortOrder
+  reserva_veiculo_id?: Prisma.SortOrder
+  reserva_retirada_prevista?: Prisma.SortOrder
+  reserva_devolucao_prevista?: Prisma.SortOrder
+  reserva_retirada_real?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_devolucao_real?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_quilometragem_retirada?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_quilometragem_devolucao?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_valor_estimado?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_criada?: Prisma.SortOrder
+  reserva_atualizada?: Prisma.SortOrder
+  reserva_cancelada?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_status?: Prisma.SortOrder
 }
 
-export type ReservaWhereUniqueInput = Prisma.AtLeast<{
-  id?: number
-  AND?: Prisma.ReservaWhereInput | Prisma.ReservaWhereInput[]
-  OR?: Prisma.ReservaWhereInput[]
-  NOT?: Prisma.ReservaWhereInput | Prisma.ReservaWhereInput[]
-  clienteId?: Prisma.IntFilter<"Reserva"> | number
-  veiculoId?: Prisma.IntFilter<"Reserva"> | number
-  dataInicio?: Prisma.DateTimeFilter<"Reserva"> | Date | string
-  dataFim?: Prisma.DateTimeFilter<"Reserva"> | Date | string
-  valorTotal?: Prisma.DecimalNullableFilter<"Reserva"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: Prisma.StringFilter<"Reserva"> | string
-  criadoEm?: Prisma.DateTimeFilter<"Reserva"> | Date | string
-  atualizadoEm?: Prisma.DateTimeFilter<"Reserva"> | Date | string
-}, "id">
+export type reservaWhereUniqueInput = Prisma.AtLeast<{
+  reserva_id?: bigint | number
+  AND?: Prisma.reservaWhereInput | Prisma.reservaWhereInput[]
+  OR?: Prisma.reservaWhereInput[]
+  NOT?: Prisma.reservaWhereInput | Prisma.reservaWhereInput[]
+  usuario_id?: Prisma.BigIntFilter<"reserva"> | bigint | number
+  reserva_veiculo_id?: Prisma.BigIntFilter<"reserva"> | bigint | number
+  reserva_retirada_prevista?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_devolucao_prevista?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_retirada_real?: Prisma.DateTimeNullableFilter<"reserva"> | Date | string | null
+  reserva_devolucao_real?: Prisma.DateTimeNullableFilter<"reserva"> | Date | string | null
+  reserva_quilometragem_retirada?: Prisma.IntNullableFilter<"reserva"> | number | null
+  reserva_quilometragem_devolucao?: Prisma.IntNullableFilter<"reserva"> | number | null
+  reserva_valor_estimado?: Prisma.DecimalNullableFilter<"reserva"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_atualizada?: Prisma.DateTimeFilter<"reserva"> | Date | string
+  reserva_cancelada?: Prisma.DateTimeNullableFilter<"reserva"> | Date | string | null
+  reserva_status?: Prisma.IntFilter<"reserva"> | number
+}, "reserva_id">
 
-export type ReservaOrderByWithAggregationInput = {
-  id?: Prisma.SortOrder
-  clienteId?: Prisma.SortOrder
-  veiculoId?: Prisma.SortOrder
-  dataInicio?: Prisma.SortOrder
-  dataFim?: Prisma.SortOrder
-  valorTotal?: Prisma.SortOrderInput | Prisma.SortOrder
-  status?: Prisma.SortOrder
-  criadoEm?: Prisma.SortOrder
-  atualizadoEm?: Prisma.SortOrder
-  _count?: Prisma.ReservaCountOrderByAggregateInput
-  _avg?: Prisma.ReservaAvgOrderByAggregateInput
-  _max?: Prisma.ReservaMaxOrderByAggregateInput
-  _min?: Prisma.ReservaMinOrderByAggregateInput
-  _sum?: Prisma.ReservaSumOrderByAggregateInput
+export type reservaOrderByWithAggregationInput = {
+  reserva_id?: Prisma.SortOrder
+  usuario_id?: Prisma.SortOrder
+  reserva_veiculo_id?: Prisma.SortOrder
+  reserva_retirada_prevista?: Prisma.SortOrder
+  reserva_devolucao_prevista?: Prisma.SortOrder
+  reserva_retirada_real?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_devolucao_real?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_quilometragem_retirada?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_quilometragem_devolucao?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_valor_estimado?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_criada?: Prisma.SortOrder
+  reserva_atualizada?: Prisma.SortOrder
+  reserva_cancelada?: Prisma.SortOrderInput | Prisma.SortOrder
+  reserva_status?: Prisma.SortOrder
+  _count?: Prisma.reservaCountOrderByAggregateInput
+  _avg?: Prisma.reservaAvgOrderByAggregateInput
+  _max?: Prisma.reservaMaxOrderByAggregateInput
+  _min?: Prisma.reservaMinOrderByAggregateInput
+  _sum?: Prisma.reservaSumOrderByAggregateInput
 }
 
-export type ReservaScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ReservaScalarWhereWithAggregatesInput | Prisma.ReservaScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ReservaScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ReservaScalarWhereWithAggregatesInput | Prisma.ReservaScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"Reserva"> | number
-  clienteId?: Prisma.IntWithAggregatesFilter<"Reserva"> | number
-  veiculoId?: Prisma.IntWithAggregatesFilter<"Reserva"> | number
-  dataInicio?: Prisma.DateTimeWithAggregatesFilter<"Reserva"> | Date | string
-  dataFim?: Prisma.DateTimeWithAggregatesFilter<"Reserva"> | Date | string
-  valorTotal?: Prisma.DecimalNullableWithAggregatesFilter<"Reserva"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: Prisma.StringWithAggregatesFilter<"Reserva"> | string
-  criadoEm?: Prisma.DateTimeWithAggregatesFilter<"Reserva"> | Date | string
-  atualizadoEm?: Prisma.DateTimeWithAggregatesFilter<"Reserva"> | Date | string
+export type reservaScalarWhereWithAggregatesInput = {
+  AND?: Prisma.reservaScalarWhereWithAggregatesInput | Prisma.reservaScalarWhereWithAggregatesInput[]
+  OR?: Prisma.reservaScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.reservaScalarWhereWithAggregatesInput | Prisma.reservaScalarWhereWithAggregatesInput[]
+  reserva_id?: Prisma.BigIntWithAggregatesFilter<"reserva"> | bigint | number
+  usuario_id?: Prisma.BigIntWithAggregatesFilter<"reserva"> | bigint | number
+  reserva_veiculo_id?: Prisma.BigIntWithAggregatesFilter<"reserva"> | bigint | number
+  reserva_retirada_prevista?: Prisma.DateTimeWithAggregatesFilter<"reserva"> | Date | string
+  reserva_devolucao_prevista?: Prisma.DateTimeWithAggregatesFilter<"reserva"> | Date | string
+  reserva_retirada_real?: Prisma.DateTimeNullableWithAggregatesFilter<"reserva"> | Date | string | null
+  reserva_devolucao_real?: Prisma.DateTimeNullableWithAggregatesFilter<"reserva"> | Date | string | null
+  reserva_quilometragem_retirada?: Prisma.IntNullableWithAggregatesFilter<"reserva"> | number | null
+  reserva_quilometragem_devolucao?: Prisma.IntNullableWithAggregatesFilter<"reserva"> | number | null
+  reserva_valor_estimado?: Prisma.DecimalNullableWithAggregatesFilter<"reserva"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada?: Prisma.DateTimeWithAggregatesFilter<"reserva"> | Date | string
+  reserva_atualizada?: Prisma.DateTimeWithAggregatesFilter<"reserva"> | Date | string
+  reserva_cancelada?: Prisma.DateTimeNullableWithAggregatesFilter<"reserva"> | Date | string | null
+  reserva_status?: Prisma.IntWithAggregatesFilter<"reserva"> | number
 }
 
-export type ReservaCreateInput = {
-  clienteId: number
-  veiculoId: number
-  dataInicio: Date | string
-  dataFim: Date | string
-  valorTotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: string
-  criadoEm?: Date | string
-  atualizadoEm?: Date | string
+export type reservaCreateInput = {
+  reserva_id?: bigint | number
+  usuario_id: bigint | number
+  reserva_veiculo_id: bigint | number
+  reserva_retirada_prevista: Date | string
+  reserva_devolucao_prevista: Date | string
+  reserva_retirada_real?: Date | string | null
+  reserva_devolucao_real?: Date | string | null
+  reserva_quilometragem_retirada?: number | null
+  reserva_quilometragem_devolucao?: number | null
+  reserva_valor_estimado?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada: Date | string
+  reserva_atualizada: Date | string
+  reserva_cancelada?: Date | string | null
+  reserva_status: number
 }
 
-export type ReservaUncheckedCreateInput = {
-  id?: number
-  clienteId: number
-  veiculoId: number
-  dataInicio: Date | string
-  dataFim: Date | string
-  valorTotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: string
-  criadoEm?: Date | string
-  atualizadoEm?: Date | string
+export type reservaUncheckedCreateInput = {
+  reserva_id?: bigint | number
+  usuario_id: bigint | number
+  reserva_veiculo_id: bigint | number
+  reserva_retirada_prevista: Date | string
+  reserva_devolucao_prevista: Date | string
+  reserva_retirada_real?: Date | string | null
+  reserva_devolucao_real?: Date | string | null
+  reserva_quilometragem_retirada?: number | null
+  reserva_quilometragem_devolucao?: number | null
+  reserva_valor_estimado?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada: Date | string
+  reserva_atualizada: Date | string
+  reserva_cancelada?: Date | string | null
+  reserva_status: number
 }
 
-export type ReservaUpdateInput = {
-  clienteId?: Prisma.IntFieldUpdateOperationsInput | number
-  veiculoId?: Prisma.IntFieldUpdateOperationsInput | number
-  dataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dataFim?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valorTotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  criadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  atualizadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type reservaUpdateInput = {
+  reserva_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  usuario_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_veiculo_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_retirada_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_devolucao_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_retirada_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_devolucao_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_quilometragem_retirada?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_quilometragem_devolucao?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_valor_estimado?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_atualizada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_cancelada?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_status?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type ReservaUncheckedUpdateInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  clienteId?: Prisma.IntFieldUpdateOperationsInput | number
-  veiculoId?: Prisma.IntFieldUpdateOperationsInput | number
-  dataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dataFim?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valorTotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  criadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  atualizadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type reservaUncheckedUpdateInput = {
+  reserva_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  usuario_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_veiculo_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_retirada_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_devolucao_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_retirada_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_devolucao_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_quilometragem_retirada?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_quilometragem_devolucao?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_valor_estimado?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_atualizada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_cancelada?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_status?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type ReservaCreateManyInput = {
-  id?: number
-  clienteId: number
-  veiculoId: number
-  dataInicio: Date | string
-  dataFim: Date | string
-  valorTotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: string
-  criadoEm?: Date | string
-  atualizadoEm?: Date | string
+export type reservaCreateManyInput = {
+  reserva_id?: bigint | number
+  usuario_id: bigint | number
+  reserva_veiculo_id: bigint | number
+  reserva_retirada_prevista: Date | string
+  reserva_devolucao_prevista: Date | string
+  reserva_retirada_real?: Date | string | null
+  reserva_devolucao_real?: Date | string | null
+  reserva_quilometragem_retirada?: number | null
+  reserva_quilometragem_devolucao?: number | null
+  reserva_valor_estimado?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada: Date | string
+  reserva_atualizada: Date | string
+  reserva_cancelada?: Date | string | null
+  reserva_status: number
 }
 
-export type ReservaUpdateManyMutationInput = {
-  clienteId?: Prisma.IntFieldUpdateOperationsInput | number
-  veiculoId?: Prisma.IntFieldUpdateOperationsInput | number
-  dataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dataFim?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valorTotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  criadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  atualizadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type reservaUpdateManyMutationInput = {
+  reserva_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  usuario_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_veiculo_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_retirada_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_devolucao_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_retirada_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_devolucao_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_quilometragem_retirada?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_quilometragem_devolucao?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_valor_estimado?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_atualizada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_cancelada?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_status?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type ReservaUncheckedUpdateManyInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  clienteId?: Prisma.IntFieldUpdateOperationsInput | number
-  veiculoId?: Prisma.IntFieldUpdateOperationsInput | number
-  dataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dataFim?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valorTotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  status?: Prisma.StringFieldUpdateOperationsInput | string
-  criadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  atualizadoEm?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type reservaUncheckedUpdateManyInput = {
+  reserva_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  usuario_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_veiculo_id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  reserva_retirada_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_devolucao_prevista?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_retirada_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_devolucao_real?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_quilometragem_retirada?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_quilometragem_devolucao?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reserva_valor_estimado?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reserva_criada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_atualizada?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  reserva_cancelada?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  reserva_status?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type ReservaOrderByRelevanceInput = {
-  fields: Prisma.ReservaOrderByRelevanceFieldEnum | Prisma.ReservaOrderByRelevanceFieldEnum[]
-  sort: Prisma.SortOrder
-  search: string
+export type reservaCountOrderByAggregateInput = {
+  reserva_id?: Prisma.SortOrder
+  usuario_id?: Prisma.SortOrder
+  reserva_veiculo_id?: Prisma.SortOrder
+  reserva_retirada_prevista?: Prisma.SortOrder
+  reserva_devolucao_prevista?: Prisma.SortOrder
+  reserva_retirada_real?: Prisma.SortOrder
+  reserva_devolucao_real?: Prisma.SortOrder
+  reserva_quilometragem_retirada?: Prisma.SortOrder
+  reserva_quilometragem_devolucao?: Prisma.SortOrder
+  reserva_valor_estimado?: Prisma.SortOrder
+  reserva_criada?: Prisma.SortOrder
+  reserva_atualizada?: Prisma.SortOrder
+  reserva_cancelada?: Prisma.SortOrder
+  reserva_status?: Prisma.SortOrder
 }
 
-export type ReservaCountOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  clienteId?: Prisma.SortOrder
-  veiculoId?: Prisma.SortOrder
-  dataInicio?: Prisma.SortOrder
-  dataFim?: Prisma.SortOrder
-  valorTotal?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  criadoEm?: Prisma.SortOrder
-  atualizadoEm?: Prisma.SortOrder
+export type reservaAvgOrderByAggregateInput = {
+  reserva_id?: Prisma.SortOrder
+  usuario_id?: Prisma.SortOrder
+  reserva_veiculo_id?: Prisma.SortOrder
+  reserva_quilometragem_retirada?: Prisma.SortOrder
+  reserva_quilometragem_devolucao?: Prisma.SortOrder
+  reserva_valor_estimado?: Prisma.SortOrder
+  reserva_status?: Prisma.SortOrder
 }
 
-export type ReservaAvgOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  clienteId?: Prisma.SortOrder
-  veiculoId?: Prisma.SortOrder
-  valorTotal?: Prisma.SortOrder
+export type reservaMaxOrderByAggregateInput = {
+  reserva_id?: Prisma.SortOrder
+  usuario_id?: Prisma.SortOrder
+  reserva_veiculo_id?: Prisma.SortOrder
+  reserva_retirada_prevista?: Prisma.SortOrder
+  reserva_devolucao_prevista?: Prisma.SortOrder
+  reserva_retirada_real?: Prisma.SortOrder
+  reserva_devolucao_real?: Prisma.SortOrder
+  reserva_quilometragem_retirada?: Prisma.SortOrder
+  reserva_quilometragem_devolucao?: Prisma.SortOrder
+  reserva_valor_estimado?: Prisma.SortOrder
+  reserva_criada?: Prisma.SortOrder
+  reserva_atualizada?: Prisma.SortOrder
+  reserva_cancelada?: Prisma.SortOrder
+  reserva_status?: Prisma.SortOrder
 }
 
-export type ReservaMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  clienteId?: Prisma.SortOrder
-  veiculoId?: Prisma.SortOrder
-  dataInicio?: Prisma.SortOrder
-  dataFim?: Prisma.SortOrder
-  valorTotal?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  criadoEm?: Prisma.SortOrder
-  atualizadoEm?: Prisma.SortOrder
+export type reservaMinOrderByAggregateInput = {
+  reserva_id?: Prisma.SortOrder
+  usuario_id?: Prisma.SortOrder
+  reserva_veiculo_id?: Prisma.SortOrder
+  reserva_retirada_prevista?: Prisma.SortOrder
+  reserva_devolucao_prevista?: Prisma.SortOrder
+  reserva_retirada_real?: Prisma.SortOrder
+  reserva_devolucao_real?: Prisma.SortOrder
+  reserva_quilometragem_retirada?: Prisma.SortOrder
+  reserva_quilometragem_devolucao?: Prisma.SortOrder
+  reserva_valor_estimado?: Prisma.SortOrder
+  reserva_criada?: Prisma.SortOrder
+  reserva_atualizada?: Prisma.SortOrder
+  reserva_cancelada?: Prisma.SortOrder
+  reserva_status?: Prisma.SortOrder
 }
 
-export type ReservaMinOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  clienteId?: Prisma.SortOrder
-  veiculoId?: Prisma.SortOrder
-  dataInicio?: Prisma.SortOrder
-  dataFim?: Prisma.SortOrder
-  valorTotal?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  criadoEm?: Prisma.SortOrder
-  atualizadoEm?: Prisma.SortOrder
-}
-
-export type ReservaSumOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  clienteId?: Prisma.SortOrder
-  veiculoId?: Prisma.SortOrder
-  valorTotal?: Prisma.SortOrder
-}
-
-export type IntFieldUpdateOperationsInput = {
-  set?: number
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
+export type reservaSumOrderByAggregateInput = {
+  reserva_id?: Prisma.SortOrder
+  usuario_id?: Prisma.SortOrder
+  reserva_veiculo_id?: Prisma.SortOrder
+  reserva_quilometragem_retirada?: Prisma.SortOrder
+  reserva_quilometragem_devolucao?: Prisma.SortOrder
+  reserva_valor_estimado?: Prisma.SortOrder
+  reserva_status?: Prisma.SortOrder
 }
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -479,69 +595,88 @@ export type NullableDecimalFieldUpdateOperationsInput = {
   divide?: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
 
 
-export type ReservaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  id?: boolean
-  clienteId?: boolean
-  veiculoId?: boolean
-  dataInicio?: boolean
-  dataFim?: boolean
-  valorTotal?: boolean
-  status?: boolean
-  criadoEm?: boolean
-  atualizadoEm?: boolean
+export type reservaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  reserva_id?: boolean
+  usuario_id?: boolean
+  reserva_veiculo_id?: boolean
+  reserva_retirada_prevista?: boolean
+  reserva_devolucao_prevista?: boolean
+  reserva_retirada_real?: boolean
+  reserva_devolucao_real?: boolean
+  reserva_quilometragem_retirada?: boolean
+  reserva_quilometragem_devolucao?: boolean
+  reserva_valor_estimado?: boolean
+  reserva_criada?: boolean
+  reserva_atualizada?: boolean
+  reserva_cancelada?: boolean
+  reserva_status?: boolean
 }, ExtArgs["result"]["reserva"]>
 
 
 
-export type ReservaSelectScalar = {
-  id?: boolean
-  clienteId?: boolean
-  veiculoId?: boolean
-  dataInicio?: boolean
-  dataFim?: boolean
-  valorTotal?: boolean
-  status?: boolean
-  criadoEm?: boolean
-  atualizadoEm?: boolean
+export type reservaSelectScalar = {
+  reserva_id?: boolean
+  usuario_id?: boolean
+  reserva_veiculo_id?: boolean
+  reserva_retirada_prevista?: boolean
+  reserva_devolucao_prevista?: boolean
+  reserva_retirada_real?: boolean
+  reserva_devolucao_real?: boolean
+  reserva_quilometragem_retirada?: boolean
+  reserva_quilometragem_devolucao?: boolean
+  reserva_valor_estimado?: boolean
+  reserva_criada?: boolean
+  reserva_atualizada?: boolean
+  reserva_cancelada?: boolean
+  reserva_status?: boolean
 }
 
-export type ReservaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "clienteId" | "veiculoId" | "dataInicio" | "dataFim" | "valorTotal" | "status" | "criadoEm" | "atualizadoEm", ExtArgs["result"]["reserva"]>
+export type reservaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"reserva_id" | "usuario_id" | "reserva_veiculo_id" | "reserva_retirada_prevista" | "reserva_devolucao_prevista" | "reserva_retirada_real" | "reserva_devolucao_real" | "reserva_quilometragem_retirada" | "reserva_quilometragem_devolucao" | "reserva_valor_estimado" | "reserva_criada" | "reserva_atualizada" | "reserva_cancelada" | "reserva_status", ExtArgs["result"]["reserva"]>
 
-export type $ReservaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Reserva"
+export type $reservaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "reserva"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    id: number
-    clienteId: number
-    veiculoId: number
-    dataInicio: Date
-    dataFim: Date
-    valorTotal: runtime.Decimal | null
-    status: string
-    criadoEm: Date
-    atualizadoEm: Date
+    reserva_id: bigint
+    usuario_id: bigint
+    reserva_veiculo_id: bigint
+    reserva_retirada_prevista: Date
+    reserva_devolucao_prevista: Date
+    reserva_retirada_real: Date | null
+    reserva_devolucao_real: Date | null
+    reserva_quilometragem_retirada: number | null
+    reserva_quilometragem_devolucao: number | null
+    reserva_valor_estimado: runtime.Decimal | null
+    reserva_criada: Date
+    reserva_atualizada: Date
+    reserva_cancelada: Date | null
+    reserva_status: number
   }, ExtArgs["result"]["reserva"]>
   composites: {}
 }
 
-export type ReservaGetPayload<S extends boolean | null | undefined | ReservaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ReservaPayload, S>
+export type reservaGetPayload<S extends boolean | null | undefined | reservaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$reservaPayload, S>
 
-export type ReservaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ReservaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type reservaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<reservaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: ReservaCountAggregateInputType | true
   }
 
-export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Reserva'], meta: { name: 'Reserva' } }
+export interface reservaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['reserva'], meta: { name: 'reserva' } }
   /**
    * Find zero or one Reserva that matches the filter.
-   * @param {ReservaFindUniqueArgs} args - Arguments to find a Reserva
+   * @param {reservaFindUniqueArgs} args - Arguments to find a Reserva
    * @example
    * // Get one Reserva
    * const reserva = await prisma.reserva.findUnique({
@@ -550,12 +685,12 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUnique<T extends ReservaFindUniqueArgs>(args: Prisma.SelectSubset<T, ReservaFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends reservaFindUniqueArgs>(args: Prisma.SelectSubset<T, reservaFindUniqueArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Reserva that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ReservaFindUniqueOrThrowArgs} args - Arguments to find a Reserva
+   * @param {reservaFindUniqueOrThrowArgs} args - Arguments to find a Reserva
    * @example
    * // Get one Reserva
    * const reserva = await prisma.reserva.findUniqueOrThrow({
@@ -564,13 +699,13 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ReservaFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ReservaFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends reservaFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, reservaFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Reserva that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ReservaFindFirstArgs} args - Arguments to find a Reserva
+   * @param {reservaFindFirstArgs} args - Arguments to find a Reserva
    * @example
    * // Get one Reserva
    * const reserva = await prisma.reserva.findFirst({
@@ -579,14 +714,14 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirst<T extends ReservaFindFirstArgs>(args?: Prisma.SelectSubset<T, ReservaFindFirstArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends reservaFindFirstArgs>(args?: Prisma.SelectSubset<T, reservaFindFirstArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Reserva that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ReservaFindFirstOrThrowArgs} args - Arguments to find a Reserva
+   * @param {reservaFindFirstOrThrowArgs} args - Arguments to find a Reserva
    * @example
    * // Get one Reserva
    * const reserva = await prisma.reserva.findFirstOrThrow({
@@ -595,13 +730,13 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirstOrThrow<T extends ReservaFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ReservaFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends reservaFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, reservaFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Reservas that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ReservaFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {reservaFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Reservas
    * const reservas = await prisma.reserva.findMany()
@@ -609,15 +744,15 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * // Get first 10 Reservas
    * const reservas = await prisma.reserva.findMany({ take: 10 })
    * 
-   * // Only select the `id`
-   * const reservaWithIdOnly = await prisma.reserva.findMany({ select: { id: true } })
+   * // Only select the `reserva_id`
+   * const reservaWithReserva_idOnly = await prisma.reserva.findMany({ select: { reserva_id: true } })
    * 
    */
-  findMany<T extends ReservaFindManyArgs>(args?: Prisma.SelectSubset<T, ReservaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends reservaFindManyArgs>(args?: Prisma.SelectSubset<T, reservaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Reserva.
-   * @param {ReservaCreateArgs} args - Arguments to create a Reserva.
+   * @param {reservaCreateArgs} args - Arguments to create a Reserva.
    * @example
    * // Create one Reserva
    * const Reserva = await prisma.reserva.create({
@@ -627,11 +762,11 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  create<T extends ReservaCreateArgs>(args: Prisma.SelectSubset<T, ReservaCreateArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends reservaCreateArgs>(args: Prisma.SelectSubset<T, reservaCreateArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Reservas.
-   * @param {ReservaCreateManyArgs} args - Arguments to create many Reservas.
+   * @param {reservaCreateManyArgs} args - Arguments to create many Reservas.
    * @example
    * // Create many Reservas
    * const reserva = await prisma.reserva.createMany({
@@ -641,11 +776,11 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    *     
    */
-  createMany<T extends ReservaCreateManyArgs>(args?: Prisma.SelectSubset<T, ReservaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends reservaCreateManyArgs>(args?: Prisma.SelectSubset<T, reservaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Reserva.
-   * @param {ReservaDeleteArgs} args - Arguments to delete one Reserva.
+   * @param {reservaDeleteArgs} args - Arguments to delete one Reserva.
    * @example
    * // Delete one Reserva
    * const Reserva = await prisma.reserva.delete({
@@ -655,11 +790,11 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  delete<T extends ReservaDeleteArgs>(args: Prisma.SelectSubset<T, ReservaDeleteArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends reservaDeleteArgs>(args: Prisma.SelectSubset<T, reservaDeleteArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Reserva.
-   * @param {ReservaUpdateArgs} args - Arguments to update one Reserva.
+   * @param {reservaUpdateArgs} args - Arguments to update one Reserva.
    * @example
    * // Update one Reserva
    * const reserva = await prisma.reserva.update({
@@ -672,11 +807,11 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  update<T extends ReservaUpdateArgs>(args: Prisma.SelectSubset<T, ReservaUpdateArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends reservaUpdateArgs>(args: Prisma.SelectSubset<T, reservaUpdateArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Reservas.
-   * @param {ReservaDeleteManyArgs} args - Arguments to filter Reservas to delete.
+   * @param {reservaDeleteManyArgs} args - Arguments to filter Reservas to delete.
    * @example
    * // Delete a few Reservas
    * const { count } = await prisma.reserva.deleteMany({
@@ -686,13 +821,13 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  deleteMany<T extends ReservaDeleteManyArgs>(args?: Prisma.SelectSubset<T, ReservaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends reservaDeleteManyArgs>(args?: Prisma.SelectSubset<T, reservaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Reservas.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ReservaUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {reservaUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Reservas
    * const reserva = await prisma.reserva.updateMany({
@@ -705,11 +840,11 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  updateMany<T extends ReservaUpdateManyArgs>(args: Prisma.SelectSubset<T, ReservaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends reservaUpdateManyArgs>(args: Prisma.SelectSubset<T, reservaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Reserva.
-   * @param {ReservaUpsertArgs} args - Arguments to update or create a Reserva.
+   * @param {reservaUpsertArgs} args - Arguments to update or create a Reserva.
    * @example
    * // Update or create a Reserva
    * const reserva = await prisma.reserva.upsert({
@@ -724,14 +859,14 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  upsert<T extends ReservaUpsertArgs>(args: Prisma.SelectSubset<T, ReservaUpsertArgs<ExtArgs>>): Prisma.Prisma__ReservaClient<runtime.Types.Result.GetResult<Prisma.$ReservaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends reservaUpsertArgs>(args: Prisma.SelectSubset<T, reservaUpsertArgs<ExtArgs>>): Prisma.Prisma__reservaClient<runtime.Types.Result.GetResult<Prisma.$reservaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Reservas.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ReservaCountArgs} args - Arguments to filter Reservas to count.
+   * @param {reservaCountArgs} args - Arguments to filter Reservas to count.
    * @example
    * // Count the number of Reservas
    * const count = await prisma.reserva.count({
@@ -740,8 +875,8 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
   **/
-  count<T extends ReservaCountArgs>(
-    args?: Prisma.Subset<T, ReservaCountArgs>,
+  count<T extends reservaCountArgs>(
+    args?: Prisma.Subset<T, reservaCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -780,7 +915,7 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * Group by Reserva.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ReservaGroupByArgs} args - Group by arguments.
+   * @param {reservaGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -795,14 +930,14 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * 
   **/
   groupBy<
-    T extends ReservaGroupByArgs,
+    T extends reservaGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ReservaGroupByArgs['orderBy'] }
-      : { orderBy?: ReservaGroupByArgs['orderBy'] },
+      ? { orderBy: reservaGroupByArgs['orderBy'] }
+      : { orderBy?: reservaGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -851,20 +986,20 @@ export interface ReservaDelegate<ExtArgs extends runtime.Types.Extensions.Intern
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ReservaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetReservaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, reservaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetReservaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Reserva model
+ * Fields of the reserva model
  */
-readonly fields: ReservaFieldRefs;
+readonly fields: reservaFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Reserva.
+ * The delegate class that acts as a "Promise-like" for reserva.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ReservaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__reservaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -892,339 +1027,344 @@ export interface Prisma__ReservaClient<T, Null = never, ExtArgs extends runtime.
 
 
 /**
- * Fields of the Reserva model
+ * Fields of the reserva model
  */
-export interface ReservaFieldRefs {
-  readonly id: Prisma.FieldRef<"Reserva", 'Int'>
-  readonly clienteId: Prisma.FieldRef<"Reserva", 'Int'>
-  readonly veiculoId: Prisma.FieldRef<"Reserva", 'Int'>
-  readonly dataInicio: Prisma.FieldRef<"Reserva", 'DateTime'>
-  readonly dataFim: Prisma.FieldRef<"Reserva", 'DateTime'>
-  readonly valorTotal: Prisma.FieldRef<"Reserva", 'Decimal'>
-  readonly status: Prisma.FieldRef<"Reserva", 'String'>
-  readonly criadoEm: Prisma.FieldRef<"Reserva", 'DateTime'>
-  readonly atualizadoEm: Prisma.FieldRef<"Reserva", 'DateTime'>
+export interface reservaFieldRefs {
+  readonly reserva_id: Prisma.FieldRef<"reserva", 'BigInt'>
+  readonly usuario_id: Prisma.FieldRef<"reserva", 'BigInt'>
+  readonly reserva_veiculo_id: Prisma.FieldRef<"reserva", 'BigInt'>
+  readonly reserva_retirada_prevista: Prisma.FieldRef<"reserva", 'DateTime'>
+  readonly reserva_devolucao_prevista: Prisma.FieldRef<"reserva", 'DateTime'>
+  readonly reserva_retirada_real: Prisma.FieldRef<"reserva", 'DateTime'>
+  readonly reserva_devolucao_real: Prisma.FieldRef<"reserva", 'DateTime'>
+  readonly reserva_quilometragem_retirada: Prisma.FieldRef<"reserva", 'Int'>
+  readonly reserva_quilometragem_devolucao: Prisma.FieldRef<"reserva", 'Int'>
+  readonly reserva_valor_estimado: Prisma.FieldRef<"reserva", 'Decimal'>
+  readonly reserva_criada: Prisma.FieldRef<"reserva", 'DateTime'>
+  readonly reserva_atualizada: Prisma.FieldRef<"reserva", 'DateTime'>
+  readonly reserva_cancelada: Prisma.FieldRef<"reserva", 'DateTime'>
+  readonly reserva_status: Prisma.FieldRef<"reserva", 'Int'>
 }
     
 
 // Custom InputTypes
 /**
- * Reserva findUnique
+ * reserva findUnique
  */
-export type ReservaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * Filter, which Reserva to fetch.
+   * Filter, which reserva to fetch.
    */
-  where: Prisma.ReservaWhereUniqueInput
+  where: Prisma.reservaWhereUniqueInput
 }
 
 /**
- * Reserva findUniqueOrThrow
+ * reserva findUniqueOrThrow
  */
-export type ReservaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * Filter, which Reserva to fetch.
+   * Filter, which reserva to fetch.
    */
-  where: Prisma.ReservaWhereUniqueInput
+  where: Prisma.reservaWhereUniqueInput
 }
 
 /**
- * Reserva findFirst
+ * reserva findFirst
  */
-export type ReservaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * Filter, which Reserva to fetch.
+   * Filter, which reserva to fetch.
    */
-  where?: Prisma.ReservaWhereInput
+  where?: Prisma.reservaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Reservas to fetch.
+   * Determine the order of reservas to fetch.
    */
-  orderBy?: Prisma.ReservaOrderByWithRelationInput | Prisma.ReservaOrderByWithRelationInput[]
+  orderBy?: Prisma.reservaOrderByWithRelationInput | Prisma.reservaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Reservas.
+   * Sets the position for searching for reservas.
    */
-  cursor?: Prisma.ReservaWhereUniqueInput
+  cursor?: Prisma.reservaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Reservas from the position of the cursor.
+   * Take `±n` reservas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Reservas.
+   * Skip the first `n` reservas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Reservas.
+   * Filter by unique combinations of reservas.
    */
   distinct?: Prisma.ReservaScalarFieldEnum | Prisma.ReservaScalarFieldEnum[]
 }
 
 /**
- * Reserva findFirstOrThrow
+ * reserva findFirstOrThrow
  */
-export type ReservaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * Filter, which Reserva to fetch.
+   * Filter, which reserva to fetch.
    */
-  where?: Prisma.ReservaWhereInput
+  where?: Prisma.reservaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Reservas to fetch.
+   * Determine the order of reservas to fetch.
    */
-  orderBy?: Prisma.ReservaOrderByWithRelationInput | Prisma.ReservaOrderByWithRelationInput[]
+  orderBy?: Prisma.reservaOrderByWithRelationInput | Prisma.reservaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Reservas.
+   * Sets the position for searching for reservas.
    */
-  cursor?: Prisma.ReservaWhereUniqueInput
+  cursor?: Prisma.reservaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Reservas from the position of the cursor.
+   * Take `±n` reservas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Reservas.
+   * Skip the first `n` reservas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Reservas.
+   * Filter by unique combinations of reservas.
    */
   distinct?: Prisma.ReservaScalarFieldEnum | Prisma.ReservaScalarFieldEnum[]
 }
 
 /**
- * Reserva findMany
+ * reserva findMany
  */
-export type ReservaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * Filter, which Reservas to fetch.
+   * Filter, which reservas to fetch.
    */
-  where?: Prisma.ReservaWhereInput
+  where?: Prisma.reservaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Reservas to fetch.
+   * Determine the order of reservas to fetch.
    */
-  orderBy?: Prisma.ReservaOrderByWithRelationInput | Prisma.ReservaOrderByWithRelationInput[]
+  orderBy?: Prisma.reservaOrderByWithRelationInput | Prisma.reservaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Reservas.
+   * Sets the position for listing reservas.
    */
-  cursor?: Prisma.ReservaWhereUniqueInput
+  cursor?: Prisma.reservaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Reservas from the position of the cursor.
+   * Take `±n` reservas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Reservas.
+   * Skip the first `n` reservas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Reservas.
+   * Filter by unique combinations of reservas.
    */
   distinct?: Prisma.ReservaScalarFieldEnum | Prisma.ReservaScalarFieldEnum[]
 }
 
 /**
- * Reserva create
+ * reserva create
  */
-export type ReservaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * The data needed to create a Reserva.
+   * The data needed to create a reserva.
    */
-  data: Prisma.XOR<Prisma.ReservaCreateInput, Prisma.ReservaUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.reservaCreateInput, Prisma.reservaUncheckedCreateInput>
 }
 
 /**
- * Reserva createMany
+ * reserva createMany
  */
-export type ReservaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Reservas.
+   * The data used to create many reservas.
    */
-  data: Prisma.ReservaCreateManyInput | Prisma.ReservaCreateManyInput[]
+  data: Prisma.reservaCreateManyInput | Prisma.reservaCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Reserva update
+ * reserva update
  */
-export type ReservaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * The data needed to update a Reserva.
+   * The data needed to update a reserva.
    */
-  data: Prisma.XOR<Prisma.ReservaUpdateInput, Prisma.ReservaUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.reservaUpdateInput, Prisma.reservaUncheckedUpdateInput>
   /**
-   * Choose, which Reserva to update.
+   * Choose, which reserva to update.
    */
-  where: Prisma.ReservaWhereUniqueInput
+  where: Prisma.reservaWhereUniqueInput
 }
 
 /**
- * Reserva updateMany
+ * reserva updateMany
  */
-export type ReservaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Reservas.
+   * The data used to update reservas.
    */
-  data: Prisma.XOR<Prisma.ReservaUpdateManyMutationInput, Prisma.ReservaUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.reservaUpdateManyMutationInput, Prisma.reservaUncheckedUpdateManyInput>
   /**
-   * Filter which Reservas to update
+   * Filter which reservas to update
    */
-  where?: Prisma.ReservaWhereInput
+  where?: Prisma.reservaWhereInput
   /**
-   * Limit how many Reservas to update.
+   * Limit how many reservas to update.
    */
   limit?: number
 }
 
 /**
- * Reserva upsert
+ * reserva upsert
  */
-export type ReservaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * The filter to search for the Reserva to update in case it exists.
+   * The filter to search for the reserva to update in case it exists.
    */
-  where: Prisma.ReservaWhereUniqueInput
+  where: Prisma.reservaWhereUniqueInput
   /**
-   * In case the Reserva found by the `where` argument doesn't exist, create a new Reserva with this data.
+   * In case the reserva found by the `where` argument doesn't exist, create a new reserva with this data.
    */
-  create: Prisma.XOR<Prisma.ReservaCreateInput, Prisma.ReservaUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.reservaCreateInput, Prisma.reservaUncheckedCreateInput>
   /**
-   * In case the Reserva was found with the provided `where` argument, update it with this data.
+   * In case the reserva was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ReservaUpdateInput, Prisma.ReservaUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.reservaUpdateInput, Prisma.reservaUncheckedUpdateInput>
 }
 
 /**
- * Reserva delete
+ * reserva delete
  */
-export type ReservaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
   /**
-   * Filter which Reserva to delete.
+   * Filter which reserva to delete.
    */
-  where: Prisma.ReservaWhereUniqueInput
+  where: Prisma.reservaWhereUniqueInput
 }
 
 /**
- * Reserva deleteMany
+ * reserva deleteMany
  */
-export type ReservaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Reservas to delete
+   * Filter which reservas to delete
    */
-  where?: Prisma.ReservaWhereInput
+  where?: Prisma.reservaWhereInput
   /**
-   * Limit how many Reservas to delete.
+   * Limit how many reservas to delete.
    */
   limit?: number
 }
 
 /**
- * Reserva without action
+ * reserva without action
  */
-export type ReservaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type reservaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Reserva
+   * Select specific fields to fetch from the reserva
    */
-  select?: Prisma.ReservaSelect<ExtArgs> | null
+  select?: Prisma.reservaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Reserva
+   * Omit specific fields from the reserva
    */
-  omit?: Prisma.ReservaOmit<ExtArgs> | null
+  omit?: Prisma.reservaOmit<ExtArgs> | null
 }

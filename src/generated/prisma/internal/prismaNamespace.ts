@@ -397,7 +397,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Reserva: 'Reserva'
+  historico_status_reserva: 'historico_status_reserva',
+  reserva: 'reserva',
+  usuario: 'usuario'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -413,73 +415,205 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "reserva"
+    modelProps: "historico_status_reserva" | "reserva" | "usuario"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
-    Reserva: {
-      payload: Prisma.$ReservaPayload<ExtArgs>
-      fields: Prisma.ReservaFieldRefs
+    historico_status_reserva: {
+      payload: Prisma.$historico_status_reservaPayload<ExtArgs>
+      fields: Prisma.historico_status_reservaFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.ReservaFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload> | null
+          args: Prisma.historico_status_reservaFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.ReservaFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload>
+          args: Prisma.historico_status_reservaFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload>
         }
         findFirst: {
-          args: Prisma.ReservaFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload> | null
+          args: Prisma.historico_status_reservaFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.ReservaFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload>
+          args: Prisma.historico_status_reservaFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload>
         }
         findMany: {
-          args: Prisma.ReservaFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload>[]
+          args: Prisma.historico_status_reservaFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload>[]
         }
         create: {
-          args: Prisma.ReservaCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload>
+          args: Prisma.historico_status_reservaCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload>
         }
         createMany: {
-          args: Prisma.ReservaCreateManyArgs<ExtArgs>
+          args: Prisma.historico_status_reservaCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         delete: {
-          args: Prisma.ReservaDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload>
+          args: Prisma.historico_status_reservaDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload>
         }
         update: {
-          args: Prisma.ReservaUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload>
+          args: Prisma.historico_status_reservaUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload>
         }
         deleteMany: {
-          args: Prisma.ReservaDeleteManyArgs<ExtArgs>
+          args: Prisma.historico_status_reservaDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.ReservaUpdateManyArgs<ExtArgs>
+          args: Prisma.historico_status_reservaUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         upsert: {
-          args: Prisma.ReservaUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReservaPayload>
+          args: Prisma.historico_status_reservaUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$historico_status_reservaPayload>
+        }
+        aggregate: {
+          args: Prisma.Historico_status_reservaAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateHistorico_status_reserva>
+        }
+        groupBy: {
+          args: Prisma.historico_status_reservaGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Historico_status_reservaGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.historico_status_reservaCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Historico_status_reservaCountAggregateOutputType> | number
+        }
+      }
+    }
+    reserva: {
+      payload: Prisma.$reservaPayload<ExtArgs>
+      fields: Prisma.reservaFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.reservaFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.reservaFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload>
+        }
+        findFirst: {
+          args: Prisma.reservaFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.reservaFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload>
+        }
+        findMany: {
+          args: Prisma.reservaFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload>[]
+        }
+        create: {
+          args: Prisma.reservaCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload>
+        }
+        createMany: {
+          args: Prisma.reservaCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.reservaDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload>
+        }
+        update: {
+          args: Prisma.reservaUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload>
+        }
+        deleteMany: {
+          args: Prisma.reservaDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.reservaUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.reservaUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$reservaPayload>
         }
         aggregate: {
           args: Prisma.ReservaAggregateArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.AggregateReserva>
         }
         groupBy: {
-          args: Prisma.ReservaGroupByArgs<ExtArgs>
+          args: Prisma.reservaGroupByArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.ReservaGroupByOutputType>[]
         }
         count: {
-          args: Prisma.ReservaCountArgs<ExtArgs>
+          args: Prisma.reservaCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.ReservaCountAggregateOutputType> | number
+        }
+      }
+    }
+    usuario: {
+      payload: Prisma.$usuarioPayload<ExtArgs>
+      fields: Prisma.usuarioFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.usuarioFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.usuarioFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload>
+        }
+        findFirst: {
+          args: Prisma.usuarioFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.usuarioFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload>
+        }
+        findMany: {
+          args: Prisma.usuarioFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload>[]
+        }
+        create: {
+          args: Prisma.usuarioCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload>
+        }
+        createMany: {
+          args: Prisma.usuarioCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.usuarioDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload>
+        }
+        update: {
+          args: Prisma.usuarioUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload>
+        }
+        deleteMany: {
+          args: Prisma.usuarioDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.usuarioUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.usuarioUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$usuarioPayload>
+        }
+        aggregate: {
+          args: Prisma.UsuarioAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUsuario>
+        }
+        groupBy: {
+          args: Prisma.usuarioGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UsuarioGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.usuarioCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UsuarioCountAggregateOutputType> | number
         }
       }
     }
@@ -522,19 +656,56 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const Historico_status_reservaScalarFieldEnum = {
+  historico_status_reserva_id: 'historico_status_reserva_id',
+  reserva_id: 'reserva_id',
+  historico_status_reserva_status_anterior: 'historico_status_reserva_status_anterior',
+  historico_status_reserva_status_novo: 'historico_status_reserva_status_novo',
+  historico_status_reserva_alterado_em: 'historico_status_reserva_alterado_em',
+  historico_status_reserva_alterado_por: 'historico_status_reserva_alterado_por',
+  historico_status: 'historico_status'
+} as const
+
+export type Historico_status_reservaScalarFieldEnum = (typeof Historico_status_reservaScalarFieldEnum)[keyof typeof Historico_status_reservaScalarFieldEnum]
+
+
 export const ReservaScalarFieldEnum = {
-  id: 'id',
-  clienteId: 'clienteId',
-  veiculoId: 'veiculoId',
-  dataInicio: 'dataInicio',
-  dataFim: 'dataFim',
-  valorTotal: 'valorTotal',
-  status: 'status',
-  criadoEm: 'criadoEm',
-  atualizadoEm: 'atualizadoEm'
+  reserva_id: 'reserva_id',
+  usuario_id: 'usuario_id',
+  reserva_veiculo_id: 'reserva_veiculo_id',
+  reserva_retirada_prevista: 'reserva_retirada_prevista',
+  reserva_devolucao_prevista: 'reserva_devolucao_prevista',
+  reserva_retirada_real: 'reserva_retirada_real',
+  reserva_devolucao_real: 'reserva_devolucao_real',
+  reserva_quilometragem_retirada: 'reserva_quilometragem_retirada',
+  reserva_quilometragem_devolucao: 'reserva_quilometragem_devolucao',
+  reserva_valor_estimado: 'reserva_valor_estimado',
+  reserva_criada: 'reserva_criada',
+  reserva_atualizada: 'reserva_atualizada',
+  reserva_cancelada: 'reserva_cancelada',
+  reserva_status: 'reserva_status'
 } as const
 
 export type ReservaScalarFieldEnum = (typeof ReservaScalarFieldEnum)[keyof typeof ReservaScalarFieldEnum]
+
+
+export const UsuarioScalarFieldEnum = {
+  usuario_id: 'usuario_id',
+  usuario_nome: 'usuario_nome',
+  usuario_cpf: 'usuario_cpf',
+  usuario_email: 'usuario_email',
+  usuario_senha: 'usuario_senha',
+  usuario_telefone: 'usuario_telefone',
+  usuario_data_nascimento: 'usuario_data_nascimento',
+  usuario_numero_cnh: 'usuario_numero_cnh',
+  usuario_validade_cnh: 'usuario_validade_cnh',
+  usuario_tipo: 'usuario_tipo',
+  usuario_criado_em: 'usuario_criado_em',
+  usuario_atualizado_em: 'usuario_atualizado_em',
+  usuario_status: 'usuario_status'
+} as const
+
+export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -553,17 +724,29 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-export const ReservaOrderByRelevanceFieldEnum = {
-  status: 'status'
+export const usuarioOrderByRelevanceFieldEnum = {
+  usuario_nome: 'usuario_nome',
+  usuario_cpf: 'usuario_cpf',
+  usuario_email: 'usuario_email',
+  usuario_senha: 'usuario_senha',
+  usuario_telefone: 'usuario_telefone',
+  usuario_numero_cnh: 'usuario_numero_cnh'
 } as const
 
-export type ReservaOrderByRelevanceFieldEnum = (typeof ReservaOrderByRelevanceFieldEnum)[keyof typeof ReservaOrderByRelevanceFieldEnum]
+export type usuarioOrderByRelevanceFieldEnum = (typeof usuarioOrderByRelevanceFieldEnum)[keyof typeof usuarioOrderByRelevanceFieldEnum]
 
 
 
 /**
  * Field references
  */
+
+
+/**
+ * Reference to a field of type 'BigInt'
+ */
+export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
+    
 
 
 /**
@@ -751,7 +934,9 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
  */
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
-  reserva?: Prisma.ReservaOmit
+  historico_status_reserva?: Prisma.historico_status_reservaOmit
+  reserva?: Prisma.reservaOmit
+  usuario?: Prisma.usuarioOmit
 }
 
 /* Types for Logging */

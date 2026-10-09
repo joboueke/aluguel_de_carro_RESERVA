@@ -1,29 +1,30 @@
 import {
   IsInt,
-  IsString,
-  IsNumber,
   IsOptional,
+  IsNumber,
   IsDateString,
+  IsPositive,
 } from 'class-validator';
+
 
 export class CreateReservaDto {
   @IsInt()
-  clienteId: number;
+  @IsPositive()
+  usuarioId: number;
 
   @IsInt()
+  @IsPositive()
   veiculoId: number;
 
   @IsDateString()
-  dataInicio: string;
+  retiradaPrevista: string;
 
   @IsDateString()
-  dataFim: string;
+  devolucaoPrevista: string;
 
   @IsOptional()
   @IsNumber()
-  valorTotal?: number;
+  valorEstimado?: number;
 
-  @IsOptional()
-  @IsString()
-  status?: string;
+  
 }

@@ -51,7 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Reserva: 'Reserva'
+  historico_status_reserva: 'historico_status_reserva',
+  reserva: 'reserva',
+  usuario: 'usuario'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -70,19 +72,56 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const Historico_status_reservaScalarFieldEnum = {
+  historico_status_reserva_id: 'historico_status_reserva_id',
+  reserva_id: 'reserva_id',
+  historico_status_reserva_status_anterior: 'historico_status_reserva_status_anterior',
+  historico_status_reserva_status_novo: 'historico_status_reserva_status_novo',
+  historico_status_reserva_alterado_em: 'historico_status_reserva_alterado_em',
+  historico_status_reserva_alterado_por: 'historico_status_reserva_alterado_por',
+  historico_status: 'historico_status'
+} as const
+
+export type Historico_status_reservaScalarFieldEnum = (typeof Historico_status_reservaScalarFieldEnum)[keyof typeof Historico_status_reservaScalarFieldEnum]
+
+
 export const ReservaScalarFieldEnum = {
-  id: 'id',
-  clienteId: 'clienteId',
-  veiculoId: 'veiculoId',
-  dataInicio: 'dataInicio',
-  dataFim: 'dataFim',
-  valorTotal: 'valorTotal',
-  status: 'status',
-  criadoEm: 'criadoEm',
-  atualizadoEm: 'atualizadoEm'
+  reserva_id: 'reserva_id',
+  usuario_id: 'usuario_id',
+  reserva_veiculo_id: 'reserva_veiculo_id',
+  reserva_retirada_prevista: 'reserva_retirada_prevista',
+  reserva_devolucao_prevista: 'reserva_devolucao_prevista',
+  reserva_retirada_real: 'reserva_retirada_real',
+  reserva_devolucao_real: 'reserva_devolucao_real',
+  reserva_quilometragem_retirada: 'reserva_quilometragem_retirada',
+  reserva_quilometragem_devolucao: 'reserva_quilometragem_devolucao',
+  reserva_valor_estimado: 'reserva_valor_estimado',
+  reserva_criada: 'reserva_criada',
+  reserva_atualizada: 'reserva_atualizada',
+  reserva_cancelada: 'reserva_cancelada',
+  reserva_status: 'reserva_status'
 } as const
 
 export type ReservaScalarFieldEnum = (typeof ReservaScalarFieldEnum)[keyof typeof ReservaScalarFieldEnum]
+
+
+export const UsuarioScalarFieldEnum = {
+  usuario_id: 'usuario_id',
+  usuario_nome: 'usuario_nome',
+  usuario_cpf: 'usuario_cpf',
+  usuario_email: 'usuario_email',
+  usuario_senha: 'usuario_senha',
+  usuario_telefone: 'usuario_telefone',
+  usuario_data_nascimento: 'usuario_data_nascimento',
+  usuario_numero_cnh: 'usuario_numero_cnh',
+  usuario_validade_cnh: 'usuario_validade_cnh',
+  usuario_tipo: 'usuario_tipo',
+  usuario_criado_em: 'usuario_criado_em',
+  usuario_atualizado_em: 'usuario_atualizado_em',
+  usuario_status: 'usuario_status'
+} as const
+
+export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -101,9 +140,14 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-export const ReservaOrderByRelevanceFieldEnum = {
-  status: 'status'
+export const usuarioOrderByRelevanceFieldEnum = {
+  usuario_nome: 'usuario_nome',
+  usuario_cpf: 'usuario_cpf',
+  usuario_email: 'usuario_email',
+  usuario_senha: 'usuario_senha',
+  usuario_telefone: 'usuario_telefone',
+  usuario_numero_cnh: 'usuario_numero_cnh'
 } as const
 
-export type ReservaOrderByRelevanceFieldEnum = (typeof ReservaOrderByRelevanceFieldEnum)[keyof typeof ReservaOrderByRelevanceFieldEnum]
+export type usuarioOrderByRelevanceFieldEnum = (typeof usuarioOrderByRelevanceFieldEnum)[keyof typeof usuarioOrderByRelevanceFieldEnum]
 
