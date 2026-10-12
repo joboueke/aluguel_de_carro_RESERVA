@@ -27,10 +27,15 @@ export class ReservasService {
           createReservaDto.devolucaoPrevista,
         ),
         reserva_valor_estimado: createReservaDto.valorEstimado,
-        reserva_status: StatusReserva.PENDENTE,
-        reserva_criada: agora,
-        reserva_atualizada: agora,
-      },
+
+      reserva_retirada_real: null,
+      reserva_devolucao_real: null,
+      reserva_cancelada: null,
+
+      reserva_status: StatusReserva.PENDENTE,
+      reserva_criada: agora,
+      reserva_atualizada: agora,
+    },
     });
   }
 
