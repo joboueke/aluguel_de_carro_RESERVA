@@ -14,7 +14,7 @@ services:
 
     environment:
       NODE_ENV: production
-      PORT: "3000"
+      PORT: "7543"
       DB_URL: ${DB_URL}
       DB_USUARIO: ${DB_USUARIO}
       DB_USUARIO_SENHA: ${DB_USUARIO_SENHA}
