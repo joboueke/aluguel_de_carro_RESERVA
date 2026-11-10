@@ -29,7 +29,7 @@ pipeline {
             steps {
                 withCredentials([
                     string(
-                        credentialsId: 'infisical-rentcar-reserva',
+                        credentialsId: 'tokenjoaoaluguelveiculo',
                         variable: 'INFISICAL_TOKEN'
                     )
                 ]) {
