@@ -10,7 +10,7 @@ services:
     container_name: reserva-api
 
     ports:
-      - "7543"
+      - "7543:7543"
 
     environment:
       NODE_ENV: production
