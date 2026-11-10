@@ -21,7 +21,7 @@ RUN npx prisma generate
 RUN npm run build
 
 # Porta utilizada pela aplicação
-EXPOSE 3000
+EXPOSE 7543
 
 # Inicia a aplicação
 CMD ["npm", "run", "start:prod"]
