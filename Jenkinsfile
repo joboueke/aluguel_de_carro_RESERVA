@@ -9,7 +9,7 @@ pipeline {
     }
 
     environment {
-        APP_NAME = 'reserva-api'
+        APP_NAME = 'aluguelveiculo-reserva'
     }
 
     stages {
