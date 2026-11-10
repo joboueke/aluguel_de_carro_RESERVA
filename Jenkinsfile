@@ -101,7 +101,7 @@ pipeline {
                     fi
 
                     HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-                        http://localhost:7543/reservas) || {
+                        http://10.136.38.50:7543/reservas) || {
                         echo "ERRO: Não foi possível conectar à API de Reservas."
                         exit 1
                     }
