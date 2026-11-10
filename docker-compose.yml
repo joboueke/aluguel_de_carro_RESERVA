@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
 
-    image: reserva-api:latest
+    image: aluguelveiculo-reserva:latest
 
-    container_name: reserva-api
+    container_name: aluguelveiculo-reserva
 
     ports:
       - "7543:7543"
