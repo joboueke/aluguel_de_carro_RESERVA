@@ -1,0 +1,24 @@
+
+services:
+  reserva-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: reserva-api:latest
+
+    container_name: reserva-api
+
+    ports:
+      - "7543:3000"
+
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      DB_URL: ${DB_URL}
+      DB_USUARIO: ${DB_USUARIO}
+      DB_USUARIO_SENHA: ${DB_USUARIO_SENHA}
+      RESERVA: ${RESERVA}
+
+
+    restart: unless-stopped

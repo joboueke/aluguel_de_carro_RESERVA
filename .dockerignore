@@ -1,0 +1,25 @@
+
+# Dependências
+node_modules
+
+# Arquivos compilados
+dist
+*.tsbuildinfo
+
+# Credenciais e configurações locais
+.env
+.env.*
+!.env.example
+
+# Git
+.git
+.gitignore
+
+# Arquivos de desenvolvimento
+.vscode
+coverage
+*.log
+
+# Scripts auxiliares locais
+consultar-usuarios.mjs
+criar-usuario-teste.mjs
